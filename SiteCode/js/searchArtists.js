@@ -11,6 +11,9 @@ function getArtists(ArtistString, callback){
 
 function printArtists(Artists){
 	console.log(JSON.stringify(Artists))
-	console.log(Artists.name)
+	artistinfo = JSON.parse(JSON.stringify(Artists.items[0]))
+	console.log(Object.keys(Artists))
+	console.log(JSON.stringify(artistinfo))
+	console.log(Object.keys(artistinfo))
 
 }
