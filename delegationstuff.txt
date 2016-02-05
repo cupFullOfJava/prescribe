@@ -1,0 +1,44 @@
+﻿Some Delegation
+
+Requirements Document Part 4:
+Jeremy:
+Flesh out that junk we wrote
+
+
+Requirements Document Part 5:
+(Get that biz done by Wednesday, 2/10 or there'll be hell to pay)
+Mitch:
+PROJECT MONITORING & CONTROL MECHANISMS:
+PROJECT RESOURCES
+
+Brandyn:
+COST ESTIMATION
+RISK PLAN
+
+Jeremy
+WORK BREAKDOWN STRUCTURE
+RESPONSIBILITY MATRIX
+GANTT CHART
+PERT CHART
+
+# TODO: keep track of any bibliography/problems encountered information (errybody)
+
+Requirements Document Part 6:
+(Get that biz done by Wednesday, 2/17 or there'll be hell to pay)
+
+Mitch:
+Major Software Functions (Complete)
+Activity Diagrams
+Sequence Diagrams
+Requirements Classs Models
+
+Brandyn:
+Major Software Functions (Complete)
+Class Directory
+Limitations/Constraints
+Non-Functional requirements
+
+Jeremy:
+Major Software Functions (Complete)
+Use case diagram 
+Use cases (Written)
