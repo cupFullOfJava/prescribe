@@ -18,7 +18,7 @@ RISK PLAN
 Jeremy
 WORK BREAKDOWN STRUCTURE
 RESPONSIBILITY MATRIX [x]
-GANTT CHART
+GANTT CHART [x]
 PERT CHART
 
 # TODO: keep track of any bibliography/problems encountered information (errybody)
