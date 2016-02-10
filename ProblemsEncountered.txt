@@ -1,0 +1,5 @@
+1. In calculating Function Points, it was unclear what to count at User inputs and what to count as user online queries, additionally it was not clear how to distinguish between External Interfaces and User Online Queries
+
+2. Unclear what Logical files are.
+
+
