@@ -8,8 +8,8 @@ Flesh out that junk we wrote
 Requirements Document Part 5:
 (Get that biz done by Wednesday, 2/10 or there'll be hell to pay)
 Mitch:
-PROJECT MONITORING & CONTROL MECHANISMS:
-PROJECT RESOURCES
+PROJECT MONITORING & CONTROL MECHANISMS[X]
+PROJECT RESOURCES [X]
 
 Brandyn:
 COST ESTIMATION
