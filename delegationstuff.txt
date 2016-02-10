@@ -40,5 +40,5 @@ Non-Functional requirements
 
 Jeremy:
 Major Software Functions (Complete)
-Use case diagram 
+Use case diagram [x]
 Use cases (Written)
