@@ -2,4 +2,6 @@
 
 2. Unclear what Logical files are.
 
+3. Cannot install visio or project to laptop.  Had to use online tools and microsoft office
+
 
