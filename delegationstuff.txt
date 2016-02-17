@@ -29,7 +29,7 @@ Requirements Document Part 6:
 Mitch:
 Major Software Functions (Complete)
 Activity Diagrams  [x]
-Requirements Class Models  [x]
+Requirements Class Models 
 
 Brandyn:
 Major Software Functions (Complete)
