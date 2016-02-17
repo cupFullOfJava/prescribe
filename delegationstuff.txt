@@ -12,8 +12,8 @@ PROJECT MONITORING & CONTROL MECHANISMS[X]
 PROJECT RESOURCES [X]
 
 Brandyn:
-COST ESTIMATION
-RISK PLAN
+COST ESTIMATION [x]
+RISK PLAN [x]
 
 Jeremy
 WORK BREAKDOWN STRUCTURE [x]
@@ -28,9 +28,8 @@ Requirements Document Part 6:
 
 Mitch:
 Major Software Functions (Complete)
-Activity Diagrams
-Sequence Diagrams
-Requirements Classs Models
+Activity Diagrams  [x]
+Requirements Class Models  [x]
 
 Brandyn:
 Major Software Functions (Complete)
