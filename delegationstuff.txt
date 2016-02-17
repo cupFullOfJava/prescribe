@@ -33,9 +33,9 @@ Requirements Class Models
 
 Brandyn:
 Major Software Functions (Complete)
-Class Directory
-Limitations/Constraints
-Non-Functional requirements
+Class Directory [x]
+Limitations/Constraints [x] 
+Non-Functional requirements [x]
 
 Jeremy:
 Major Software Functions (Complete)
