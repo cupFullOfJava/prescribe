@@ -1,0 +1,18 @@
+*{
+    font-family: Courier, sans-serif;
+}
+
+h1{
+    color: red;
+    text-align: center;
+    text-size: 2em;
+}
+
+form{
+    text-align: center;
+    text-size: 1em;
+}
+
+#searchButton{
+    color:red;
+}
