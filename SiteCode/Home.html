@@ -79,13 +79,20 @@
                             <label>Search for New Bands</label>
                             <input type="text" class="form-control" id="search">
                         </div>
-                        <button type="button" id="searchbutton" class="btn btn-default" onclick="getArtists(getElementById('search').value,printArtists)">Search</button>
+                        <button type="button" id="searchbutton" class="btn btn-default">Search</button>
                     </form>
                 </div>
                 <div class="col-sm-2 sidenav">
                 </div>
             </div>
         </div>
+		<script>
+			$(document).ready(function() {
+				$('#searchbutton').click(function() {
+				 getArtists($('#search').val(),printArtists)
+				});
+			});
+		</script>
         <!--<footer class="container-fluid text-center">
             <p></p>
         </footer>-->
