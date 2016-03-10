@@ -88,7 +88,8 @@
         </div>
 		<script>
 			$(document).ready(function() {
-				$('#searchbutton').click(function() {
+				$(document).on('click','#searchbutton',function(){
+				//$('#searchbutton').click(function() {
 				 getArtists($('#search').val(),printArtists)
 				});
 			});

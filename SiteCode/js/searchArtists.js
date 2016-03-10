@@ -7,12 +7,37 @@ function getArtists(ArtistString, callback){
 			console.log(response)
 		},
 		success: function(response) {
-			callback(response.artists)	 
+			callback(response.artists, ArtistString)	 
 		}
 	})
 }
 
-function printArtists(Artists){
-	artistinfo = JSON.parse(JSON.stringify(Artists.items))
-	console.log(JSON.stringify(artistinfo[0]))
+function getRelated(ArtistID, callback) {
+	$.ajax({
+		url: "https://api.spotify.com/v1/artists/"+ArtistID+"/related-artists",
+		datatype: "json",
+		error: function(response) {
+			console.log(response)
+		},
+		success: function(response) {
+			callback(response)
+		}
+	})
+};
+
+function printArtists(Artists, searchArtist){
+	console.log("There are "+Artists.items.length+" artists returned");
+	exactmatch = false
+	for(i = 0; i< Artists.items.length; i++){
+		if(Artists.items[i].name.toLowerCase() == searchArtist.toLowerCase()){
+			getRelated(Artists.items[i].id, printRelated)
+			exactmatch = true
+		}
+	}
+}
+
+function printRelated(response){
+	for(i = 0; i < response.artists.length; i++){
+		console.log(response.artists[i].name)
+	}	
 }
