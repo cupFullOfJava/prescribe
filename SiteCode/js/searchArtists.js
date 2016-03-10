@@ -29,7 +29,7 @@ function printArtists(Artists, searchArtist){
 	console.log("There are "+Artists.items.length+" artists returned");
 	exactmatch = false
 	for(i = 0; i< Artists.items.length; i++){
-		if(Artists.items[i].name.toLowerCase() == searchArtist.toLowerCase()){
+		if(Artists.items[i].name.toLowerCase() == searchArtist.toLowerCase().trim()){
 			getRelated(Artists.items[i].id, printRelated)
 			exactmatch = true
 		}
