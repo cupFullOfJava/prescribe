@@ -38,6 +38,6 @@ function printArtists(Artists, searchArtist){
 
 function printRelated(response){
 	for(i = 0; i < response.artists.length; i++){
-		console.log(response.artists[i].name)
+		document.write('<h2>\t'+response.artists[i].name+"\n</h2>")
 	}	
 }
