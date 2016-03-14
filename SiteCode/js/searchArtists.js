@@ -4,6 +4,8 @@ function getArtists(ArtistString, callback){
 		url: "https://api.spotify.com/v1/search?q="+searchString+"&type=artist",
 		dataType: "json",
 		error: function(response) {
+			console.log("Artist String "+ArtistString);
+			console.log("Search String "+searchString);
 			console.log(response)
 		},
 		success: function(response) {
@@ -38,6 +40,6 @@ function printArtists(Artists, searchArtist){
 
 function printRelated(response){
 	for(i = 0; i < response.artists.length; i++){
-		document.write('<h2>\t'+response.artists[i].name+"\n</h2>")
+		$("#reclist").append("<li>"+response.artists[i].name+'</li>')
 	}	
 }
