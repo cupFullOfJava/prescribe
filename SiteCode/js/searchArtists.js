@@ -1,4 +1,4 @@
-function getArtists(ArtistString, callback){
+function getArtists(ArtistString, callback) {
 	var searchString = ArtistString.split(" ").join("%20");
 	$.ajax({
 		url: "https://api.spotify.com/v1/search?q="+searchString+"&type=artist",
