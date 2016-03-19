@@ -4,7 +4,6 @@ Requirements Document Part 4:
 Jeremy:
 Flesh out that junk we wrote
 
-
 Requirements Document Part 5:
 (Get that biz done by Wednesday, 2/10 or there'll be hell to pay)
 Mitch:
@@ -40,4 +39,29 @@ Non-Functional requirements [x]
 Jeremy:
 Major Software Functions (Complete)
 Use case diagram [x]
-Use cases (Written) [x]
+
+******************************************** 3/19/2016 ********************************************
+
+Mitch:
+ - Graphical Model of architectural design (and text description).
+ - Figure out how to dynamically populate the artist table with artist images, biographies, and names.
+ - Fix the Requirements Class models on the Requirements document.
+ - Figure out how to get the front end and back end set up together on a server (Tomcat?)
+ - Add functionality to the API calls to return the most popular search result if
+	no exact matches were found.
+
+Jeremy:
+  - UI Design
+  - Document editing. 
+  - "View Bio" Button on recommendation table.
+
+Brandyn:
+ - UML Class Diagrams
+ - Activity Diagrams
+ - Non-Functional Requirements
+ - Get Facebook login sorted out.
+ - Create SQL table to store.
+ - Create SQL functions to return artist_id's where the user's user_id matches the user_id in the
+	database.	
+
+********************************************************************************************************
