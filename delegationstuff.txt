@@ -45,13 +45,13 @@ Use case diagram [x]
 Mitch:
  - Graphical Model of architectural design (and text description).
  - Figure out how to dynamically populate the artist table with artist images, biographies, and names.
- - Fix the Requirements Class models on the Requirements document.
+ - Fix the Requirements Class models on the Requirements document. [x]
  - Figure out how to get the front end and back end set up together on a server (Tomcat?)
  - Add functionality to the API calls to return the most popular search result if
 	no exact matches were found.
 
 Jeremy:
-  - UI Design
+  - UI Design [x]
   - Document editing. 
   - "View Bio" Button on recommendation table.
 
