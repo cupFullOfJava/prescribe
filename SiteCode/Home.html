@@ -64,10 +64,10 @@
                 var js, fjs = d.getElementsByTagName(s)[0];
                 if (d.getElementById(id)) return;
                 js = d.createElement(s); js.id = id;
-                js.src = "https//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
+                js.src = "//https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
                 fjs.parentNode.insertBefore(js, fjs);
             }(document, 'script', 'facebook-jssdk'));
-            /*
+            
             //deals with getting the current login status of the user
             FB.getLoginStatus(function(response) {
                 if (response.status === 'connected') {
@@ -79,7 +79,7 @@
                 //statusChangeCallback(response);
                 //need to add in if user has logged in before but is just not currently logged in
                 //also need to add if the user is logged in, send them to the log'd in site
-            });*/
+            });
         </script>
         
         <nav class="navbar navbar-inverse">
@@ -98,7 +98,7 @@
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
 							<li>
-                                <div class="fb-login-button" data-max-rows="0" data-size="medium" data-show-faces="false" data-auto-logout-link="false"></div>
+                                <button><div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="false"></div></button>
                                 <!--<li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span>Facebook Login</a></li>-->
 							</li>
                     </ul>
