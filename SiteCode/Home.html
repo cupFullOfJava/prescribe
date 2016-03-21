@@ -47,6 +47,37 @@
 
     <body>
 		<!--APP ID: 1299153776765147-->
+        <!--Facebook Login Script
+        <script>
+            window.fbAsyncInit = function() {
+                FB.init({
+                    appId      : '1299153776765147',
+                    xfbml      : true,
+                    version    : 'v2.5'
+                });
+            };
+
+            (function(d, s, id){
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) {return;}
+                js = d.createElement(s); js.id = id;
+                js.src = "//connect.facebook.net/en_US/sdk.js";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+            
+            FB.getLoginStatus(function(response) {
+                if (response.status === 'connected') {
+                    console.log('Logged in.');
+                }
+                else {
+                    FB.login();
+                }
+                //statusChangeCallback(response);
+                //need to add in if user has logged in before but is just not currently logged in
+                //also need to add if the user is logged in, send them to the log'd in site
+            });
+        </script>-->
+        
         <nav class="navbar navbar-inverse">
             <div class="container-fluid">
                 <div class="navbar-header">
@@ -63,9 +94,7 @@
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
 							<li>
-								<div class="fb-login-button" data-size="medium" data-show-faces="false" data-auto-logout-link="true">
-									<span class = "glyphicon glyphicon-log-in"></span>  Login
-								</div>
+                                <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
 							</li>
                     </ul>
                 </div>
