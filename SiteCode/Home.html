@@ -46,9 +46,11 @@
     </head>
 
     <body>
-		<!--APP ID: 1299153776765147-->
-        <!--Facebook Login Script
+		<!--Facebook APP ID: 1299153776765147-->
+        <!--Facebook Login Script-->
+        <div id="fb-root"></div>
         <script>
+            //inits fb login
             window.fbAsyncInit = function() {
                 FB.init({
                     appId      : '1299153776765147',
@@ -56,15 +58,17 @@
                     version    : 'v2.5'
                 });
             };
-
-            (function(d, s, id){
+            
+            //calls the sdk.js which is the start of eveything
+            (function(d, s, id) {
                 var js, fjs = d.getElementsByTagName(s)[0];
-                if (d.getElementById(id)) {return;}
+                if (d.getElementById(id)) return;
                 js = d.createElement(s); js.id = id;
-                js.src = "//connect.facebook.net/en_US/sdk.js";
+                js.src = "https//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
                 fjs.parentNode.insertBefore(js, fjs);
             }(document, 'script', 'facebook-jssdk'));
-            
+            /*
+            //deals with getting the current login status of the user
             FB.getLoginStatus(function(response) {
                 if (response.status === 'connected') {
                     console.log('Logged in.');
@@ -75,8 +79,8 @@
                 //statusChangeCallback(response);
                 //need to add in if user has logged in before but is just not currently logged in
                 //also need to add if the user is logged in, send them to the log'd in site
-            });
-        </script>-->
+            });*/
+        </script>
         
         <nav class="navbar navbar-inverse">
             <div class="container-fluid">
@@ -94,7 +98,8 @@
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
 							<li>
-                                <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+                                <div class="fb-login-button" data-max-rows="0" data-size="medium" data-show-faces="false" data-auto-logout-link="false"></div>
+                                <!--<li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span>Facebook Login</a></li>-->
 							</li>
                     </ul>
                 </div>
