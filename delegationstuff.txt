@@ -43,7 +43,7 @@ Use case diagram [x]
 ******************************************** 3/19/2016 ********************************************
 
 Mitch:
- - Graphical Model of architectural design (and text description).
+ - Graphical Model of architectural design (and text description). [x]
  - Figure out how to dynamically populate the artist table with artist images, biographies, and names.
  - Fix the Requirements Class models on the Requirements document. [x]
  - Figure out how to get the front end and back end set up together on a server (Tomcat?)
