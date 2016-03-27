@@ -112,15 +112,25 @@
                 <div class="col-sm-8 text-left"> 
                     <h1>Prescribe</h1>
                     <hr>
-                        <div class="form-group">
-                            <label>Search for New Bands</label>
-                            <input type="text" class="form-control" placeholder="Enter an Artist or Band" id="search">
-                        </div>
-                        <button type="button" id="searchbutton" class="btn btn-default">Search</button>
-					<div>
-						<ul id='reclist'>
-						</ul>
-					</div>
+                        <div class="form-group" id="search_div" style="display: initial">
+                            	<label>Search for New Bands</label>
+                        	<input type="text" class="form-control" placeholder="Enter an Artist or Band" id="search">
+                      	 	<button type="button" id="searchbutton" class="btn btn-default">Search</button>
+			</div>
+			<div style="display: none" id="results_div">
+                        	<table class="table table-bordered" id="results_table">
+                                	<thead>
+                                        	<tr>
+                                                	<th>Artist/Band Name</th>
+                                                	<th>Picture</th>
+                                                	<th>Bio</th>
+                                                </tr>
+                                        </thead>
+                                        <tbody>
+                                      	</tbody>
+                               	</table>
+                         </div>
+
                 </div>
                 <div class="col-sm-2 sidenav">
                 </div>

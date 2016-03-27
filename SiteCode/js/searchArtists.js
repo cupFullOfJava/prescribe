@@ -74,7 +74,17 @@ function printArtists(Artists, searchArtist){
 *
 **/
 function printRelated(response){
+	$("#search_div").hide()
+	$("#results_div").show()
 	for(i = 0; i < response.artists.length; i++){
-		$("#reclist").append("<li>"+response.artists[i].name+'</li>')
+		if(document.getElementById("results_table")){
+		$("#results_table tbody").append(
+			"<tr><td>"+response.artists[i].name+"</td>"
+			+"<td><img src="+response.artists[i].images[0].url+" height='200' width='200'></td>"+"<td></td></tr>"
+		)
+			console.log("Results table found")
+		} else {
+			console.log("Results table not found");
+		}
 	}	
 }
