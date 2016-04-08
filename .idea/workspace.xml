@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e3940aa3-2d5f-4cce-96e5-dc9ad01ecd33" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SiteCode/Home.html" afterPath="$PROJECT_DIR$/SiteCode/Home.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SiteCode/js/searchArtists.js" afterPath="$PROJECT_DIR$/SiteCode/js/searchArtists.js" />
     </list>
     <ignored path="Prescribe.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,7 +28,7 @@
         <entry file="file://$PROJECT_DIR$/SiteCode/js/searchArtists.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="83" column="117" selection-start-line="83" selection-start-column="117" selection-end-line="83" selection-end-column="117" />
+              <caret line="94" column="97" selection-start-line="94" selection-start-column="97" selection-end-line="94" selection-end-column="97" />
               <folding />
             </state>
           </provider>
@@ -36,8 +37,8 @@
       <file leaf-file-name="Home.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SiteCode/Home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6596434">
-              <caret line="129" column="27" selection-start-line="129" selection-start-column="27" selection-end-line="129" selection-end-column="27" />
+            <state vertical-scroll-proportion="0.14910859">
+              <caret line="133" column="33" selection-start-line="133" selection-start-column="33" selection-end-line="133" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -345,15 +346,15 @@
     <entry file="file://$PROJECT_DIR$/SiteCode/js/searchArtists.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="83" column="117" selection-start-line="83" selection-start-column="117" selection-end-line="83" selection-end-column="117" />
+          <caret line="94" column="97" selection-start-line="94" selection-start-column="97" selection-end-line="94" selection-end-column="97" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SiteCode/Home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6596434">
-          <caret line="129" column="27" selection-start-line="129" selection-start-column="27" selection-end-line="129" selection-end-column="27" />
+        <state vertical-scroll-proportion="0.14910859">
+          <caret line="133" column="33" selection-start-line="133" selection-start-column="33" selection-end-line="133" selection-end-column="33" />
           <folding />
         </state>
       </provider>
