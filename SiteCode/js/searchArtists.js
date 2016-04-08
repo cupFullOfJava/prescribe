@@ -80,7 +80,9 @@ function printRelated(response){
 		if(document.getElementById("results_table")){
 		$("#results_table tbody").append(
 			"<tr><td>"+response.artists[i].name+"</td>"
-			+"<td><img src="+response.artists[i].images[0].url+" height='200' width='200'></td>"+"<td></td></tr>"
+			+"<td><img src="+response.artists[i].images[0].url+" height='200' width='200'></td>"+
+			'<td><button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#bioModal'+i+'">'
+			+'See Artist Bio</button></tr>'
 		)
 			console.log("Results table found")
 		} else {
