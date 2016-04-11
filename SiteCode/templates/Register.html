@@ -11,31 +11,31 @@
                 <div class="col-sm-8 text-left"> 
                     <h1>New User Registration</h1>
                     <hr>
-                    <form role="form">
+                    <form role="form" action="/submit-registration/" method="POST">
                         
                         <div class="form-group">
                             <label for="fname">First Name:</label>
-                            <input type="firstname" class="form-control" id="fname">
+                            <input type="text" class="form-control" id="fname" name="fname">
                         </div>
                         
                         <div class="form-group">
                             <label for="lname">Last Name:</label>
-                            <input type="lastname" class="form-control" id="lname">
+                            <input type="text" class="form-control" id="lname" name="lname">
                         </div>
                         
                         <div class="form-group">
                             <label for="email">Email address:</label>
-                            <input type="email" class="form-control" id="email">
+                            <input type="email" class="form-control" id="email" name="email">
                         </div>
                         
                         <div class="form-group">
-                            <label for="pwd">Password:</label>
-                            <input type="password" class="form-control" id="pwd">
+                            <label for="pwd1">Password:</label>
+                            <input type="password" class="form-control" id="pwd1" name="pwd1">
                         </div>
                         
                         <div class="form-group">
-                            <label for="pwd">Confirm Password:</label>
-                            <input type="password" class="form-control" id="pwd">
+                            <label for="pwd2">Confirm Password:</label>
+                            <input type="password" class="form-control" id="pwd2" name="pwd2">
                         </div>
                         
                         <button type="submit" class="btn btn-default">Submit</button>

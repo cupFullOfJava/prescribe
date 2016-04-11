@@ -1,13 +1,15 @@
 create table users
-	(username varchar(15) not null unique,
-	 user_pw varchar(12), 
-	 primary key (username)
+	(email varchar(60) not null unique,
+	 firstname varchar(75),
+	 lastname varchar(75),
+	 user_pw char(66),
+	 primary key (email)
 	 );
 	 
 create table searches
-	(username varchar(15) not null unique,
-	 artist_id numeric(12) not null unique,
+	(email varchar(15) not null unique,
+	 artist_id varchar(30),
 	 primary key (artist_id),
-	 foreign key (username) references users(username)
+	 foreign key (email) references users(email)
 	 );
 	 
