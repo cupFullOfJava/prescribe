@@ -5,9 +5,5 @@ associated mysql database.
 
 """
 
-from flask import *
-from models import *
-from werkzeug.security import generate_password_hash, check_password_hash
-
-application = flask.
+application = 
 

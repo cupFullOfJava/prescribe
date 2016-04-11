@@ -2,12 +2,15 @@ from peewee import *
 
 database = MySQLDatabase('prescribe', **{'password': 'prescribeapppass', 'user': 'prescribeapp'})
 
+
 class UnknownField(object):
     pass
+
 
 class BaseModel(Model):
     class Meta:
         database = database
+
 
 class Users(BaseModel):
     user_pw = CharField(null=True)
@@ -15,6 +18,7 @@ class Users(BaseModel):
 
     class Meta:
         db_table = 'users'
+
 
 class Searches(BaseModel):
     artist = DecimalField(db_column='artist_id', primary_key=True)
