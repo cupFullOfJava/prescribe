@@ -7,37 +7,92 @@
                 
                 <div class="col-sm-2 sidenav">
                 </div>
-                
+
                 <div class="col-sm-8 text-left"> 
                     <h1>New User Registration</h1>
                     <hr>
                     <form role="form" action="/submit-registration/" method="POST">
+
+                        <!--
+                        The dummyuser and dummy pass inputs are here to prevent browser autocompletion.
+                        It turns out that it is really annoying in registration forms.
+                         -->
+
+                        <input type="text" style="display:none" id="dummyuser">
+                        <input type="password" style="display:none" id="dummypass">
+
+                        {% if flags['fname'] %}
+                            <div class="form-group has-error has-feedback">
+                                <label class="control-label" for="fnameEr">First Name:</label>
+                                <input type="text" class="form-control" id="fnameEr"
+                                       aria-describedby="inputError2Status" name="fname">
+                                <span class="glyphicon glyphicon-remove form-control-feedback"
+                                      aria-hidden="true"></span>
+                                <span id="fnameStatus" class="sr-only">(error)</span>
+                            </div>
+                        {% else %}
+                            <div class="form-group">
+                                <label for="fname">First Name:</label>
+                                <input type="text" class="form-control" id="fname" name="fname"
+                                       value="{{values['fname']}}">
+                            </div>
+                        {% endif %}
+
+                        {% if flags['lname'] %}
+                            <div class="form-group has-error has-feedback">
+                                <label class="control-label" for="lnameEr">Last Name:</label>
+                                <input type="password" class="form-control" id="lnameEr"
+                                       aria-describedby="inputError2Status" name="lname">
+                                <span class="glyphicon glyphicon-remove form-control-feedback"
+                                      aria-hidden="true"></span>
+                                <span id="inputError2Status" class="sr-only">(error)</span>
+                            </div>
+                        {% else %}
+                            <div class="form-group">
+                                <label for="lname">Last Name:</label>
+                                <input type="text" class="form-control"
+                                       id="lname" name="lname" value="{{values['lname']}}">
+                            </div>
+                        {% endif %}
+                        {% if flags['email'] %}
+                            <div class="form-group has-error has-feedback">
+                                <label class="control-label" for="emailEr">Email Address:</label>
+                                <input type="password" class="form-control" id="emailEr"
+                                       aria-describedby="inputError2Status" name="email">
+                                <span class="glyphicon glyphicon-remove form-control-feedback"
+                                      aria-hidden="true"></span>
+                                <span id="emailStatus" class="sr-only">(error)</span>
+                            </div>
+                        {% else %}
+                            <div class="form-group">
+                                <label for="email">Email Address:</label>
+                                <input type="email" class="form-control" id="email"
+                                       name="email" value="{{values['email']}}">
+                            </div>
+                        {% endif %}
+                            <div class="form-group">
+                                <label for="pwd1">Password:</label>
+                                <input type="password" class="form-control"
+                                       id="pwd1" name="pwd1" value="">
+                            </div>
                         
-                        <div class="form-group">
-                            <label for="fname">First Name:</label>
-                            <input type="text" class="form-control" id="fname" name="fname">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="lname">Last Name:</label>
-                            <input type="text" class="form-control" id="lname" name="lname">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email">Email address:</label>
-                            <input type="email" class="form-control" id="email" name="email">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="pwd1">Password:</label>
-                            <input type="password" class="form-control" id="pwd1" name="pwd1">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="pwd2">Confirm Password:</label>
-                            <input type="password" class="form-control" id="pwd2" name="pwd2">
-                        </div>
-                        
+                            <div class="form-group">
+                                <label for="pwd2">Confirm Password:</label>
+                                <input type="password" class="form-control"
+                                       id="pwd2" name="pwd2" value="">
+                            </div>
+                                {% if flags['repeatemail'] %}
+                                    <div class="alert alert-danger">
+                                        <strong>Oops!</strong>
+                                        That email is already registered
+                                    </div>
+                                {% endif %}
+                                {% if flags['repeatpwd'] %}
+                                    <div class="alert alert-danger">
+                                        <strong>You done goofed.</strong>
+                                        The passwords you entered do not match
+                                    </div>
+                                {% endif %}
                         <button type="submit" class="btn btn-default">Submit</button>
                     
                     </form>

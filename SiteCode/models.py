@@ -21,7 +21,7 @@ class Users(BaseModel):
     email = CharField(primary_key=True)
     firstname = CharField(null=True)
     lastname = CharField(null=True)
-    user_pw = CharField(null=True)
+    user_pw = CharField(null=False)
 
     class Meta:
         db_table = 'users'

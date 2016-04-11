@@ -2,7 +2,7 @@ create table users
 	(email varchar(60) not null unique,
 	 firstname varchar(75),
 	 lastname varchar(75),
-	 user_pw char(66),
+	 user_pw char(66) not null unique,
 	 primary key (email)
 	 );
 	 

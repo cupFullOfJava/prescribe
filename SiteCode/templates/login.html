@@ -8,6 +8,8 @@
                 
                 <div class="col-sm-8 text-left"> 
                     <form role="form" action="/user-login/" method="POST">
+                        <input type="text" style='display:none'name="dummyuser">
+                        <input type="password" style="display:none" name="dummypass">
                         <h1>Login</h1>
                         <hr>
                         {% if no_user %}
@@ -29,7 +31,7 @@
                         </div>
                         <div class="alert alert-danger">
                             <strong>Oh dear...</strong>
-                            Looks like your Email or Password are incorrect
+                            Looks like your Email or Password is incorrect
                         </div>
                         {% else %}
                         <div class="form-group">
