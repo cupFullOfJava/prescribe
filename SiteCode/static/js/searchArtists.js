@@ -70,7 +70,8 @@ function printArtists(Artists, searchArtist){
 /**
 *
 * The printRelated function takes a JSON format response containing a list of artists and
-* iterates through it, appending each one to the appropriate HTML feature.
+* iterates through it, appending each one to the appropriate HTML feature, and then creates a fading modal
+* to contain the biography of every artist.
 *
 **/
 function printRelated(response){
