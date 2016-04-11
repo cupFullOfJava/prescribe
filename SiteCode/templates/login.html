@@ -1,0 +1,33 @@
+{% extends "header.html" %}
+{% block body %}
+<body>
+        <div class="container-fluid text-center">    
+            <div class="row content">
+                <div class="col-sm-2 sidenav">
+                </div>
+                
+                <div class="col-sm-8 text-left"> 
+                    <form role="form">
+                        <h1>Login</h1>
+                        <hr>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="pwd">Password:</label>
+                            <input type="password" class="form-control" id="pwd">
+                        </div>
+                        <div class="checkbox">
+                            <label><input type="checkbox"> Remember me</label>
+                        </div>
+                        <button type="submit" class="btn btn-default">Submit</button>
+                        <a href="/register/">Not Registered?</a>
+                    </form>
+                </div>
+                <div class="col-sm-2 sidenav">
+                </div>
+            </div>
+        </div>
+    </body>
+{% endblock %}
