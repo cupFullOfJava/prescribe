@@ -7,19 +7,43 @@
                 </div>
                 
                 <div class="col-sm-8 text-left"> 
-                    <form role="form">
+                    <form role="form" action="/user-login/" method="POST">
                         <h1>Login</h1>
                         <hr>
+                        {% if no_user %}
+                        <div class="form-group has-error has-feedback">
+                            <label class="control-label" for="emailEr">Email:</label>
+                            <input type="email" class="form-control" id="emailEr"
+                                   aria-describedby="inputError2Status" name="email">
+                            <span class="glyphicon glyphicon-remove form-control-feedback"
+                                  aria-hidden="true"></span>
+                            <span id="emailStatusl" class="sr-only">(error)</span>
+                        </div>
+                        <div class="form-group has-error has-feedback">
+                            <label class="control-label" for="passwdEr">Password:</label>
+                            <input type="password" class="form-control" id="passwdEr"
+                                   aria-describedby="inputError2Status" name="pwd">
+                            <span class="glyphicon glyphicon-remove form-control-feedback"
+                                  aria-hidden="true"></span>
+                            <span id="inputError2Status" class="sr-only">(error)</span>
+                        </div>
+                        <div class="alert alert-danger">
+                            <strong>Oh dear...</strong>
+                            Looks like your Email or Password are incorrect
+                        </div>
+                        {% else %}
                         <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" class="form-control" id="email">
+                            <label for="email">Email:
+                            </label>
+                            <input type="email" class="form-control" id="email" name="email">
                         </div>
                         <div class="form-group">
                             <label for="pwd">Password:</label>
-                            <input type="password" class="form-control" id="pwd">
+                            <input type="password" class="form-control" id="pwd" name="pwd">
                         </div>
+                        {% endif %}
                         <div class="checkbox">
-                            <label><input type="checkbox"> Remember me</label>
+                            <label><input type="checkbox">Remember Me</label>
                         </div>
                         <button type="submit" class="btn btn-default">Submit</button>
                         <a href="/register/">Not Registered?</a>

@@ -6,7 +6,8 @@ associated mysql database.
 """
 
 from flask import request, render_template, Flask
-from peewee import PeeweeException
+import peewee
+from MySQLdb import MySQLError
 from werkzeug.security import generate_password_hash, check_password_hash
 from models import *
 
@@ -64,11 +65,32 @@ def submit_reg():
                         email=email,
                         user_pw=generate_password_hash(pwd1))
             print 'User Added'
-        except PeeweeException as er:
+        except MySQLError as er:
             print er.message
+        except IntegrityError as er:
+            print "Duplicate Users"
 
     return render_template('Register.html')
 
+# This url corresponds with the endpoint for user login requests.
+@application.route('/user-login/', methods=['POST'])
+def login():
+    email = request.form['email']
+    passwd = request.form['pwd']
+    no_user = False
+    try:
+        user = Users.get(Users.email == email)
+        if check_password_hash(user.user_pw, passwd):
+            print 'User '+user.firstname+' has successfully logged on.'
+            no_user = False
+        else:
+            no_user = True
+    except MySQLError as er:
+        print er.message
+    except peewee.DoesNotExist as er:
+        no_user = True
+
+    return render_template('login.html', no_user=no_user)
 
 # Runs the application
 if __name__ == '__main__':
