@@ -4,7 +4,11 @@ and their saved searches.
 """
 from peewee import *
 
-database = MySQLDatabase('presribe', **{'password': 'prescribeapppass', 'user': 'prescribeapp'})
+DB_DATA = open('DB_DATA', 'r')
+DB_USER = DB_DATA.readline().rstrip()
+DB_PASS = DB_DATA.readline().rstrip()
+
+database = MySQLDatabase('presribe', **{'password': DB_USER, 'user': DB_PASS})
 
 
 class UnknownField(object):

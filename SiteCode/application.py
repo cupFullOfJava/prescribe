@@ -12,6 +12,15 @@ application = Flask(__name__)
 application.config["DEBUG"] = True
 
 
+@application.before_request
+def connect_db():
+    database.connect()
+
+
+@application.teardown_request
+def drop_db():
+    pass
+
 # Render the Home.html template at the base url ("/")
 @application.route('/')
 def home_page():
