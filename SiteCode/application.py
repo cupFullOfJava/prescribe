@@ -5,7 +5,7 @@ associated mysql database.
 
 """
 
-from flask import request, render_template, Flask
+from flask import request, render_template, Flask, session
 import peewee
 from MySQLdb import MySQLError
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -13,6 +13,7 @@ from models import *
 
 application = Flask(__name__)
 application.config["DEBUG"] = True
+application.secret_key = open('SESSION_KEY','r').readline().rstrip()
 
 
 # Connect to the database whenever a request needs to be made
@@ -31,6 +32,10 @@ def drop_db(exc):
 # Render the Home.html template at the base url ("/")
 @application.route('/')
 def home_page():
+    try:
+        print session['user']
+    except KeyError:
+        print "No user logged in"
     return render_template('Home.html')
 
 
@@ -113,7 +118,9 @@ def login():
         user = Users.get(Users.email == email)
         if check_password_hash(user.user_pw, passwd):
             print 'User '+user.firstname+' has successfully logged on.'
+            session['user'] = email
             no_user = False
+
         else:
             # If the password doesn't match the one found in the database, Set the no_user flag to True
             no_user = True
