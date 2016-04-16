@@ -1,15 +1,19 @@
 create table users
-	(email varchar(60) not null unique,
+	(id int auto_increment,
+	 email varchar(60) not null unique,
 	 firstname varchar(75),
 	 lastname varchar(75),
-	 user_pw char(66) not null unique,
-	 primary key (email)
-	 );
+	 user_pw char(66),
+	 primary key (id)
+	 ) ENGINE = InnoDB;
 	 
 create table searches
-	(email varchar(15) not null unique,
+	(user_id int,
 	 artist_id varchar(30),
-	 primary key (artist_id),
-	 foreign key (email) references users(email)
-	 );
+	 primary key (user_id, artist_id),
+	 foreign key (user_id)
+	    references users (id)
+	    on delete cascade
+	    on update cascade
+	 ) ENGINE = InnoDB;
 	 

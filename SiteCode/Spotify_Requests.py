@@ -11,7 +11,7 @@ def search_artist(artist_name):
     try:
         for artist in artists.json()['artists']['items']:
             if artist['name'].lower() == artist_name:
-                return {'name': artist['name'].encode('utf-8'), 'id': artist['id'].encode('utf-8')}
+                return {'name': artist['name'], 'id': artist['id']}
         else:
             return None
     except KeyError:
@@ -29,9 +29,9 @@ def get_related(artist_id):
     for related in related_artists:
         results.append(
                 {
-                    'name': related['name'].encode('utf-8'),
-                    'id': related['id'].encode('utf-8'),
-                    'picture': related['images'][0]['url'].encode('utf-8')
+                    'name': related['name'],
+                    'id': related['id'],
+                    'picture': related['images'][0]['url']
                 }
         )
     return results

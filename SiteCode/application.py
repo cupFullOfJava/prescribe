@@ -119,7 +119,7 @@ def login():
         user = Users.get(Users.email == email)
         if check_password_hash(user.user_pw, passwd):
             # Create a session variable corresponding with the user.
-            session['user'] = email
+            session['user'] = user.id
             session['name'] = user.firstname
             no_user = False
             return render_template("Home.html")
@@ -149,7 +149,7 @@ def log_out():
 def save_artist(artist_id):
     print session['user']
     Searches.create(
-            email=session['user'],
+            user=session['user'],
             artist=artist_id
     )
     return render_template('Home.html')
