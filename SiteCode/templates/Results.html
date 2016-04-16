@@ -1,0 +1,51 @@
+{% extends "header.html" %}
+{% block body %}
+<div class="container-fluid text-center">
+    <h3>Based on your interest in {{name}} we prescribe:</h3>
+    <p></p>
+    <div class="row content">
+        <div class="col-sm-2 sidenav"></div>
+        <div class="col-sm-8 text-left">
+            <div id="results_div">
+                <div class="table-responsive">
+                    <table class="table table-hover" id="results_table">
+                        <thead>
+                        <tr>
+                            <th>Artist/Band Name</th>
+                            <th>Picture</th>
+                            <th>Bio</th>
+                            {% if session['name'] %}
+                            <th>Save</th>
+                            {% endif %}
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for x in range(related|length) %}
+                        <tr>
+                            <td>{{related[x]['name']}}</td>
+                            <td><img src="{{related[x]['picture']}}" height="200" width="200"></td>
+                            <td><button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
+                                        data-target="#bioModal'+i+'">
+                                See Artist Bio
+                            </button></td>
+                            {% if session['user'] %}
+                            <td>
+                                <a href="/save/{{related[x]['id']}}">
+                                    <button type="button" class="btn btn-default btn-lg">
+                                        Save <span class="glyphicon glyphicon-star-empty" style="font-size:1.2em"></span>
+                                    </button>
+                                </a>
+                            </td>
+                            {% endif %}
+
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <div id="bioDiv"></div>
+            </div>
+        </div>
+</div>
+
+{% endblock %}

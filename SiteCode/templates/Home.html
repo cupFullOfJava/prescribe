@@ -8,53 +8,21 @@
                 <h1>Prescribe</h1>
                 <hr>
                 <div class="form-group" id="search_div" style="display: initial">
-                    <label>Search for New Bands</label>
-                    <input type="text" class="form-control" placeholder="Enter an Artist or Band" id="search">
-                    <button type="button" id="searchbutton" class="btn btn-default">Search</button>
-                </div>
-			<div style="display: none" id="results_div">
-                <div class="table-responsive">
-                    <table class="table table-hover" id="results_table">
-                    <thead>
-                    <tr>
-                        <th>Artist/Band Name</th>
-                        <th>Picture</th>
-                        <th>Bio</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    </tbody>
-                    </table>
-                </div>
-                <div id="bioDiv"></div>
-            </div>
-
-                </div>
-                <div class="col-sm-2 sidenav">
+                    <form role="form" action="/show-results/" method="POST">
+                        <label>Search for New Bands</label>
+                        <input type="text" class="form-control" placeholder="Enter an Artist or Band" id="search"
+                               name="artistSearch">
+                        {% if artist_not_found %}
+                        <div class="alert alert-danger">
+                            <strong>Bummer...</strong>
+                            Looks like an artist by that name doesn't exist yet.
+                        </div>
+                        {% endif %}
+                        <button type="submit" id="searchbutton" class="btn btn-default">Search</button>
+                    </form>
                 </div>
             </div>
 		 </div>
-		<script>
-			$(document).ready(function() {
-				
-				$('#search').val("");
-
-				$(document).on('click','#searchbutton',function(){
-					$('#reclist').empty();
-					getArtists($('#search').val(),printArtists)
-				});
-					
-				$(document).on('keydown', '#search', function(e){
-					if (e.keyCode == 13) {
-						$('#reclist').empty();
-						getArtists($("#search").val(), printArtists)
-					}
-				});
-			});
-		</script>
-        <!--<footer class="container-fluid text-center">
-            <p></p>
-        </footer>-->
-
-    </body>
+    </div>
+</body>
 {% endblock %}

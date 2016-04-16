@@ -10,6 +10,7 @@ import peewee
 from MySQLdb import MySQLError
 from werkzeug.security import generate_password_hash, check_password_hash
 from models import *
+from Spotify_Requests import search_artist, get_related
 
 application = Flask(__name__)
 application.config["DEBUG"] = True
@@ -117,10 +118,11 @@ def login():
     try:
         user = Users.get(Users.email == email)
         if check_password_hash(user.user_pw, passwd):
-            print 'User '+user.firstname+' has successfully logged on.'
+            # Create a session variable corresponding with the user.
             session['user'] = email
+            session['name'] = user.firstname
             no_user = False
-
+            return render_template("Home.html")
         else:
             # If the password doesn't match the one found in the database, Set the no_user flag to True
             no_user = True
@@ -132,6 +134,38 @@ def login():
 
     # no_user flag is passed into the html as a variable to trigger a form error graphic.
     return render_template('login.html', no_user=no_user)
+
+
+# Logs the user out of the application
+@application.route('/logout/')
+def log_out():
+    session.pop('user',None)
+    session.pop('name',None)
+    return render_template("Home.html")
+
+
+# Saves a search result to the database
+@application.route('/save/<artist_id>')
+def save_artist(artist_id):
+    print session['user']
+    Searches.create(
+            email=session['user'],
+            artist=artist_id
+    )
+    return render_template('Home.html')
+
+
+# Shows the results of the user's search. Uses methods from the Spotify_Requests module.
+@application.route('/show-results/', methods=['POST'])
+def show_results():
+    artist_name = request.form['artistSearch']
+    artist = search_artist(artist_name)
+    if artist is None:
+        artist_not_found = True
+        return render_template('Home.html', artist_not_found=artist_not_found)
+    else:
+        related = get_related(artist['id'])
+        return render_template('Results.html', name=artist['name'], related=related)
 
 # Runs the application
 if __name__ == '__main__':

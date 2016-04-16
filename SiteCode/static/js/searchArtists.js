@@ -83,7 +83,8 @@ function printRelated(response){
 			"<tr><td>"+response.artists[i].name+"</td>"
 			+"<td><img src="+response.artists[i].images[0].url+" height='200' width='200'></td>"+
 			'<td><button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#bioModal'+i+'">'
-			+'See Artist Bio</button></tr>'
+			+'See Artist Butt</button></td>'
+			+'<td>Hello <span class="glyphicon glyphicon-star-empty"></span></td></tr>'
 		);
 
 		$("#bioDiv").append(
