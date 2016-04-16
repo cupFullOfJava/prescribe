@@ -37,3 +37,12 @@ def get_related(artist_id):
     return results
 
 
+###
+# Gets the relevant data for a particular artist
+###
+def get_artist(artist_id):
+    url = "https://api.spotify.com/v1/artists/"+artist_id
+    artist = requests.get(url).json()
+    return {"name": artist['name'],
+            "id": artist['id'],
+            'picture': artist['images'][0]['url']}

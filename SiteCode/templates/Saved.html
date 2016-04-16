@@ -1,0 +1,38 @@
+{% extends "header.html" %}
+{% block body %}
+<div class="container-fluid text-center">
+    <h3>Your saved artists:</h3>
+    <p></p>
+    <div class="row content">
+        <div class="col-sm-2 sidenav"></div>
+        <div class="col-sm-8 text-left">
+            <div id="results_div">
+                <div class="table-responsive">
+                    <table class="table table-hover" id="results_table">
+                        <thead>
+                        <tr>
+                            <th>Artist/Band Name</th>
+                            <th>Picture</th>
+                            <th>Bio</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for x in range(saved_artists|length) %}
+                        <tr>
+                            <td>{{saved_artists[x]['name']}}</td>
+                            <td><img src="{{saved_artists[x]['picture']}}" height="200" width="200"></td>
+                            <td><button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
+                                        data-target="#bioModal'+i+'">
+                                See Artist Bio
+                            </button></td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <div id="bioDiv"></div>
+            </div>
+        </div>
+</div>
+
+{% endblock %}

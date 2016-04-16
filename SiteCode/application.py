@@ -10,7 +10,7 @@ import peewee
 from MySQLdb import MySQLError
 from werkzeug.security import generate_password_hash, check_password_hash
 from models import *
-from Spotify_Requests import search_artist, get_related
+from Spotify_Requests import search_artist, get_related, get_artist
 
 application = Flask(__name__)
 application.config["DEBUG"] = True
@@ -121,6 +121,10 @@ def login():
             # Create a session variable corresponding with the user.
             session['user'] = user.id
             session['name'] = user.firstname
+            session['saved'] = []
+            saved = Searches.select(Searches.artist).where(Searches.user == session['user'])
+            for item in saved:
+                session['saved'].append(item.artist)
             no_user = False
             return render_template("Home.html")
         else:
@@ -147,7 +151,7 @@ def log_out():
 # Saves a search result to the database
 @application.route('/save/<artist_id>')
 def save_artist(artist_id):
-    print session['user']
+    session['saved'].append(artist_id)
     Searches.create(
             user=session['user'],
             artist=artist_id
@@ -166,6 +170,15 @@ def show_results():
     else:
         related = get_related(artist['id'])
         return render_template('Results.html', name=artist['name'], related=related)
+
+
+@application.route('/show-saved/')
+def show_saved():
+    saved_artists = []
+    for artist in session['saved']:
+        saved_artists.append(get_artist(artist))
+
+    return render_template("Saved.html", saved_artists = saved_artists)
 
 # Runs the application
 if __name__ == '__main__':
