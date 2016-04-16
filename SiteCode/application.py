@@ -172,6 +172,8 @@ def show_results():
         return render_template('Results.html', name=artist['name'], related=related)
 
 
+# Gathers the information for every artist that the user has saved, and then renders a template containing
+# a list of saved artists.
 @application.route('/show-saved/')
 def show_saved():
     saved_artists = []
