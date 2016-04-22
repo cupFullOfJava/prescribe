@@ -1,4 +1,5 @@
 import requests
+from GetBio import getArtistBio
 
 
 ###
@@ -12,8 +13,8 @@ def search_artist(artist_name):
         for artist in artists.json()['artists']['items']:
             if artist['name'].lower() == artist_name:
                 return {'name': artist['name'], 'id': artist['id']}
-        else:
-            return None
+            else:
+                return None
     except KeyError:
         return None
 
@@ -31,7 +32,8 @@ def get_related(artist_id):
                 {
                     'name': related['name'],
                     'id': related['id'],
-                    'picture': related['images'][0]['url']
+                    'picture': related['images'][0]['url'],
+                    'bio': getArtistBio(related['name'])
                 }
         )
     return results

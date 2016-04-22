@@ -141,17 +141,19 @@ def login():
 
 
 # Logs the user out of the application
+# Pops the user ID, Name, and Saved artists from session data
 @application.route('/logout/')
 def log_out():
     session.pop('user',None)
     session.pop('name',None)
+    session.pop('saved',None)
     return render_template("Home.html")
 
 
 # Saves a search result to the database
 @application.route('/save/<artist_id>')
 def save_artist(artist_id):
-    session['saved'].append(artist_id)
+    session['saved'].append(artist_id.strip())
     Searches.create(
             user=session['user'],
             artist=artist_id
@@ -169,7 +171,9 @@ def show_results():
         return render_template('Home.html', artist_not_found=artist_not_found)
     else:
         related = get_related(artist['id'])
-        return render_template('Results.html', name=artist['name'], related=related)
+        for artist in related:
+            artist['saved'] = artist['id'] in session['saved']
+        return render_template('Results.html', name=get_artist(artist['id'])['name'], related=related)
 
 
 # Gathers the information for every artist that the user has saved, and then renders a template containing
@@ -181,6 +185,19 @@ def show_saved():
         saved_artists.append(get_artist(artist))
 
     return render_template("Saved.html", saved_artists = saved_artists)
+
+
+# This function removes an artist from the saved artists
+@application.route('/unsave-mysaved/<artist_id>')
+@application.route('/unsave/<artist_id>')
+def remove_save(artist_id):
+    saved = Searches.get(Searches.user == session['user'], Searches.artist == artist_id.strip())
+    saved.delete_instance()
+    session['saved'].remove(artist_id)
+    # TODO finish this business
+    if request.path == None:
+        pass
+    return render_template("Home.html")
 
 # Runs the application
 if __name__ == '__main__':
