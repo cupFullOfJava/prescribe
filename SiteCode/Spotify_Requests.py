@@ -32,8 +32,8 @@ def get_related(artist_id):
                 {
                     'name': related['name'],
                     'id': related['id'],
-                    'picture': related['images'][0]['url'],
-                    'bio': getArtistBio(related['name'])
+                    'picture': related['images'][0]['url']
+                    #'bio': getArtistBio(related['name'])
                 }
         )
     return results

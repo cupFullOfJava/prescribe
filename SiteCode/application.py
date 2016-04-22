@@ -11,6 +11,7 @@ from MySQLdb import MySQLError
 from werkzeug.security import generate_password_hash, check_password_hash
 from models import *
 from Spotify_Requests import search_artist, get_related, get_artist
+from GetBio import getArtistBio
 
 application = Flask(__name__)
 application.config["DEBUG"] = True
@@ -171,9 +172,10 @@ def show_results():
         return render_template('Home.html', artist_not_found=artist_not_found)
     else:
         related = get_related(artist['id'])
-        for artist in related:
-            artist['saved'] = artist['id'] in session['saved']
-        return render_template('Results.html', name=get_artist(artist['id'])['name'], related=related)
+        if session.get('user'):
+            for artist in related:
+                artist['saved'] = artist['id'] in session['saved']
+        return render_template('Results.html', name=artist_name.title(), related=related)
 
 
 # Gathers the information for every artist that the user has saved, and then renders a template containing
@@ -185,6 +187,12 @@ def show_saved():
         saved_artists.append(get_artist(artist))
 
     return render_template("Saved.html", saved_artists = saved_artists)
+
+
+@application.route('/bio/<artist_name>')
+def artist_bio(artist_name):
+    bio = getArtistBio(artist_name)
+    return render_template("Biography.html", artist_name=artist_name, bio=bio)
 
 
 # This function removes an artist from the saved artists

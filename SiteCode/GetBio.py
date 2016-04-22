@@ -32,6 +32,7 @@ def getArtistBio(artist):
 
 
 def getArtistBio(artist):
+    artist = '_'.join(artist.title().strip().split())
     try:
         page = wikipedia.page(artist+"_(band)").summary
         return page
