@@ -152,20 +152,24 @@ def log_out():
 
 
 # Saves a search result to the database
-@application.route('/save/<artist_id>')
-def save_artist(artist_id):
+@application.route('/save/<artist_id>/<artist_name>')
+def save_artist(artist_id, artist_name):
+    artist_name = artist_name.strip()
     session['saved'].append(artist_id.strip())
     Searches.create(
             user=session['user'],
             artist=artist_id
     )
-    return render_template('Home.html')
+    return show_results(artist_name)
 
 
 # Shows the results of the user's search. Uses methods from the Spotify_Requests module.
-@application.route('/show-results/', methods=['POST'])
-def show_results():
-    artist_name = request.form['artistSearch']
+@application.route('/show-results/<artist_name>', methods=['POST'])
+def show_results(artist_name):
+    if artist_name == "_":
+        artist_name = request.form['artistSearch'].lower()
+    else:
+        artist_name = artist_name.lower()
     artist = search_artist(artist_name)
     if artist is None:
         artist_not_found = True
@@ -186,26 +190,32 @@ def show_saved():
     for artist in session['saved']:
         saved_artists.append(get_artist(artist))
 
-    return render_template("Saved.html", saved_artists = saved_artists)
+    return render_template("Saved.html", saved_artists=saved_artists)
 
 
+# Generate a biography page for an artist
 @application.route('/bio/<artist_name>')
 def artist_bio(artist_name):
     bio = getArtistBio(artist_name)
     return render_template("Biography.html", artist_name=artist_name, bio=bio)
 
 
-# This function removes an artist from the saved artists
-@application.route('/unsave-mysaved/<artist_id>')
-@application.route('/unsave/<artist_id>')
-def remove_save(artist_id):
+# This function removes an artist from the user's saved artists from a search results page
+@application.route('/unsave/<artist_id>/<artist_name>')
+def remove_save_results(artist_id,artist_name):
     saved = Searches.get(Searches.user == session['user'], Searches.artist == artist_id.strip())
     saved.delete_instance()
     session['saved'].remove(artist_id)
-    # TODO finish this business
-    if request.path == None:
-        pass
-    return render_template("Home.html")
+    return show_results(artist_name)
+
+
+# This function removes an artist from the user's saved artists and returns to the user's saved artists.
+@application.route('/unsave-saved/<artist_id>')
+def remove_saved_artist(artist_id):
+    saved = Searches.get(Searches.user == session['user'], Searches.artist == artist_id.strip())
+    saved.delete_instance()
+    session['saved'].remove(artist_id)
+    return show_saved()
 
 # Runs the application
 if __name__ == '__main__':

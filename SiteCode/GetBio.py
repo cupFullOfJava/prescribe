@@ -38,8 +38,12 @@ def getArtistBio(artist):
         return page
     except wikipedia.PageError:
         try:
-            page = wikipedia.page(artist).summary
+            page = wikipedia.page(artist+"_(rapper)").summary
             return page
-        except:
-            return "No Bio Found"
+        except wikipedia.PageError:
+            try:
+                page = wikipedia.page(artist).summary
+                return page
+            except:
+                return "No Bio Found"
 

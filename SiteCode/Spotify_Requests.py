@@ -28,14 +28,21 @@ def get_related(artist_id):
     related_artists = requests.get(url).json()['artists']
     results = []
     for related in related_artists:
-        results.append(
-                {
-                    'name': related['name'],
-                    'id': related['id'],
-                    'picture': related['images'][0]['url']
-                    #'bio': getArtistBio(related['name'])
-                }
-        )
+        if len(related['images']) > 0:
+            results.append(
+                    {
+                        'name': related['name'],
+                        'id': related['id'],
+                        'picture': related['images'][0]['url']
+                    }
+            )
+        else:
+            results.append(
+                    {
+                        'name': related['name'],
+                        'id': related['id'],
+                    }
+            )
     return results
 
 

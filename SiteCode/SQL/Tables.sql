@@ -9,7 +9,7 @@ create table users
 	 
 create table searches
 	(user_id int,
-	 artist_id varchar(30),
+	 artist_id varchar(100),
 	 primary key (user_id, artist_id),
 	 foreign key (user_id)
 	    references users (id)

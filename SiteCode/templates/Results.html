@@ -23,7 +23,12 @@
                         {% for x in range(related|length) %}
                         <tr>
                             <td>{{related[x]['name']}}</td>
+                            {% if related[x]['picture'] %}
                             <td><img src="{{related[x]['picture']}}" height="200" width="200"></td>
+                            {% else %}
+                            <td><img src="{{url_for('static', filename='images/PrescribeLogo.png')}}" height="200"
+                            width="200"></td>
+                            {% endif %}
                             <td>
                                 <a href="/bio/{{related[x]['name']}}">
                                     <button type="button" class="btn btn-primary btn-lg">
@@ -34,7 +39,7 @@
                             {% if session['user'] %}
                             {% if related[x]['saved'] %}
                             <td>
-                                <a href="/unsave/{{related[x]['id']}}">
+                                <a href="/unsave/{{related[x]['id']}}/{{name}}">
                                     <button type="button" class="btn btn-primary btn-lg">
                                         Saved <span class="glyphicon glyphicon-star" style="font-size:1.2em"></span>
                                     </button>
@@ -42,7 +47,7 @@
                             </td>
                             {% else %}
                             <td>
-                                <a href="/save/{{related[x]['id']}}">
+                                <a href="/save/{{related[x]['id']}}/{{name}}">
                                     <button type="button" class="btn btn-default btn-lg">
                                         Save <span class="glyphicon glyphicon-star-empty"
                                                    style="font-size:1.2em"></span>
