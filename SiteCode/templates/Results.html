@@ -26,8 +26,12 @@
                             {% if related[x]['picture'] %}
                             <td><img src="{{related[x]['picture']}}" height="200" width="200"></td>
                             {% else %}
+                            {% if related[x]['id'] == 'x01' %}
+                            <td><img src="{{url_for('static', filename='images/Prescribe_Img.jpg')}}" height="200" width="200"></td>
+                            {% else %}
                             <td><img src="{{url_for('static', filename='images/PrescribeLogo.png')}}" height="200"
                             width="200"></td>
+                            {% endif %}
                             {% endif %}
                             <td>
                                 <a href="/bio/{{related[x]['name']}}">

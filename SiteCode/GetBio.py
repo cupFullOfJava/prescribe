@@ -32,18 +32,21 @@ def getArtistBio(artist):
 
 
 def getArtistBio(artist):
-    artist = '_'.join(artist.title().strip().split())
-    try:
-        page = wikipedia.page(artist+"_(band)").summary
-        return page
-    except wikipedia.PageError:
+    if artist == "B. Deff and the Cat Daddys":
+        return open('.bio','r').read()
+    else:
+        artist = '_'.join(artist.title().strip().split())
         try:
-            page = wikipedia.page(artist+"_(rapper)").summary
+            page = wikipedia.page(artist+"_(band)").summary
             return page
         except wikipedia.PageError:
             try:
-                page = wikipedia.page(artist).summary
+                page = wikipedia.page(artist+"_(rapper)").summary
                 return page
-            except:
-                return "No Bio Found"
+            except wikipedia.PageError:
+                try:
+                    page = wikipedia.page(artist).summary
+                    return page
+                except:
+                    return "No Bio Found"
 

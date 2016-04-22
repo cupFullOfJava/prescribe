@@ -27,6 +27,11 @@ def get_related(artist_id):
     url = "https://api.spotify.com/v1/artists/"+artist_id+"/related-artists"
     related_artists = requests.get(url).json()['artists']
     results = []
+    if artist_id == "0kbYTNQb4Pb1rPbbaF0pT4":
+        results.append({
+            'name': 'B. Deff and the Cat Daddys',
+            'id': 'x01',
+        })
     for related in related_artists:
         if len(related['images']) > 0:
             results.append(
@@ -46,11 +51,16 @@ def get_related(artist_id):
     return results
 
 
-###
+#
 # Gets the relevant data for a particular artist
 ###
 def get_artist(artist_id):
     url = "https://api.spotify.com/v1/artists/"+artist_id
+    if artist_id == 'x01':
+        return {
+            "name": 'B. Deff and the Cat Daddies',
+            'id': 'x01'
+        }
     artist = requests.get(url).json()
     return {"name": artist['name'],
             "id": artist['id'],
