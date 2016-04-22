@@ -3,33 +3,10 @@
 # uses the string librarie's capwords function to capitalize the correct words
 # in their search, it then searches wikipedia using that. If the user input is found
 # in the list returned it finds the index of that and summarizes that page.
-#If it doesn't find an exact match it returns the most relevant wikipedia page.
-
-# P.S. We got that easter egg.
+# If it doesn't find an exact match it returns the most relevant wikipedia page.
 
 import wikipedia
 import string
-
-"""
-def getArtistBio(artist):
-    w
-    artist = string.capwords(artist)+'_(band)'
-    try:
-        search = wikipedia.search(artist)
-        #if artist == "Dem Boyz":
-            #summary = They some bosses
-            #return (summary)
-        if artist in search:
-            index = search.index(artist)
-            summary = wikipedia.summary(search[index],sentences=5)
-            return (summary)
-        else:
-            summary = wikipedia.summary(search[0],sentences=5)
-            return (summary)
-    except wikipedia.PageError:
-        return "Sorry, No biography can be found"
-"""
-
 
 def getArtistBio(artist):
     if artist == "B. Deff and the Cat Daddys":
