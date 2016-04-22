@@ -8,9 +8,10 @@
 import wikipedia
 import string
 
+
 def getArtistBio(artist):
     if artist == "B. Deff and the Cat Daddys":
-        return open('.bio','r').read()
+        return open('.bio', 'r').read()
     else:
         artist = '_'.join(artist.title().strip().split())
         try:

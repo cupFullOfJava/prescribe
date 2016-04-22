@@ -5,7 +5,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SiteCode/GetBio.py" afterPath="$PROJECT_DIR$/SiteCode/GetBio.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SiteCode/Spotify_Requests.py" afterPath="$PROJECT_DIR$/SiteCode/Spotify_Requests.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SiteCode/templates/Results.html" afterPath="$PROJECT_DIR$/SiteCode/templates/Results.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SiteCode/templates/Saved.html" afterPath="$PROJECT_DIR$/SiteCode/templates/Saved.html" />
     </list>
     <ignored path="Prescribe.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,13 +38,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Prescribe_Img.jpg" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SiteCode/static/images/Prescribe_Img.jpg">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SiteCode/models.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -65,6 +58,18 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="Saved.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SiteCode/templates/Saved.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="6.869565">
+              <caret line="26" column="98" selection-start-line="26" selection-start-column="98" selection-end-line="26" selection-end-column="98" />
+              <folding>
+                <element signature="n#style#0;n#span#0;n#button#0;n#a#0;n#td#5;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Results.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SiteCode/templates/Results.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -78,23 +83,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GetBio.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GetBio.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SiteCode/GetBio.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.25">
-              <caret line="33" column="25" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
               <folding>
-                <element signature="e#506#522#0" expanded="true" />
+                <element signature="e#475#491#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Spotify_Requests.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Spotify_Requests.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SiteCode/Spotify_Requests.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="61" column="23" selection-start-line="61" selection-start-column="23" selection-end-line="61" selection-end-column="23" />
+            <state vertical-scroll-proportion="0.53571427">
+              <caret line="60" column="46" selection-start-line="60" selection-start-column="46" selection-end-line="60" selection-end-column="46" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -130,13 +135,13 @@
         <option value="$PROJECT_DIR$/SiteCode/templates/Biography.html" />
         <option value="$PROJECT_DIR$/SiteCode/templates/Register.html" />
         <option value="$PROJECT_DIR$/SiteCode/templates/Home.html" />
-        <option value="$PROJECT_DIR$/SiteCode/templates/Saved.html" />
         <option value="$PROJECT_DIR$/SiteCode/SQL/Tables.sql" />
         <option value="$PROJECT_DIR$/SiteCode/templates/About.html" />
         <option value="$PROJECT_DIR$/SiteCode/application.py" />
-        <option value="$PROJECT_DIR$/SiteCode/Spotify_Requests.py" />
         <option value="$PROJECT_DIR$/SiteCode/templates/Results.html" />
         <option value="$PROJECT_DIR$/SiteCode/GetBio.py" />
+        <option value="$PROJECT_DIR$/SiteCode/templates/Saved.html" />
+        <option value="$PROJECT_DIR$/SiteCode/Spotify_Requests.py" />
       </list>
     </option>
   </component>
@@ -838,16 +843,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SiteCode/templates/Saved.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43324938">
-          <caret line="25" column="87" selection-start-line="25" selection-start-column="87" selection-end-line="25" selection-end-column="87" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#button#0;n#a#0;n#td#3;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SiteCode/templates/header.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.68010074">
@@ -856,35 +851,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SiteCode/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="36" selection-start-line="21" selection-start-column="36" selection-end-line="21" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SiteCode/SQL/Tables.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="23" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SiteCode/static/images/Prescribe_Img.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SiteCode/Spotify_Requests.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="61" column="23" selection-start-line="61" selection-start-column="23" selection-end-line="61" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SiteCode/application.py">
@@ -908,12 +877,48 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/SiteCode/SQL/Tables.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="17" column="23" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SiteCode/templates/Saved.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="6.869565">
+          <caret line="26" column="98" selection-start-line="26" selection-start-column="98" selection-end-line="26" selection-end-column="98" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#button#0;n#a#0;n#td#5;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SiteCode/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="21" column="36" selection-start-line="21" selection-start-column="36" selection-end-line="21" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/SiteCode/GetBio.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.25">
-          <caret line="33" column="25" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding>
-            <element signature="e#506#522#0" expanded="true" />
+            <element signature="e#475#491#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SiteCode/Spotify_Requests.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.53571427">
+          <caret line="60" column="46" selection-start-line="60" selection-start-column="46" selection-end-line="60" selection-end-column="46" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
           </folding>
         </state>
       </provider>

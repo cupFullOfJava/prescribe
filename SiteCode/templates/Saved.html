@@ -20,7 +20,17 @@
                         {% for x in range(saved_artists|length) %}
                         <tr>
                             <td>{{saved_artists[x]['name']}}</td>
+                            {% if saved_artists[x]['picture'] %}
                             <td><img src="{{saved_artists[x]['picture']}}" height="200" width="200"></td>
+                            {% else %}
+                            {% if saved_artists[x]['id'] == 'x01' %}
+                            <td><img src="{{url_for('static', filename='images/Prescribe_Img.jpg')}}" height="200"
+                            width="200"></td>
+                            {% else %}
+                            <td><img src="{{url_for('static', filename='images/PrescribeLogo.jpg')}}" height="200"
+                            width="200"></td>
+                            {% endif %}
+                            {% endif %}
                             <td>
                                 <a href="/bio/{{saved_artists[x]['name']}}">
                                     <button type="button" class="btn btn-primary btn-lg">

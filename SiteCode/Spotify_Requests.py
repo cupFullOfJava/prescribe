@@ -58,7 +58,7 @@ def get_artist(artist_id):
     url = "https://api.spotify.com/v1/artists/"+artist_id
     if artist_id == 'x01':
         return {
-            "name": 'B. Deff and the Cat Daddies',
+            "name": 'B. Deff and the Cat Daddys',
             'id': 'x01'
         }
     artist = requests.get(url).json()
