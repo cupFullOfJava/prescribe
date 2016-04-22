@@ -25,10 +25,11 @@
                             <td>{{related[x]['name']}}</td>
                             <td><img src="{{related[x]['picture']}}" height="200" width="200"></td>
                             <td>
-                                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
-                                        data-target="#bioModal{{x}}">
-                                    See Artist Bio
-                                </button>
+                                <a href="/bio/{{related[x]['name']}}">
+                                    <button type="button" class="btn btn-primary btn-lg">
+                                        See Artist Bio
+                                    </button>
+                                </a>
                             </td>
                             {% if session['user'] %}
                             {% if related[x]['saved'] %}
@@ -56,26 +57,6 @@
                         </tbody>
                     </table>
                 </div>
-                <div id="bioDiv">
-                    {% for x in range(related|length) %}
-                    <div class="modal fade" id="bioModal{{x}}" tabindex="-1" role="dialog">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                                            aria-hidden="true">&times;</span></button>
-                                    <h4 class="modal-title">Artist Bio: {{related[x]['name']}}</h4>
-                                </div>
-                                <div class="modal-body">
-                                    <p>{{related[x]['bio']}}</p>
-                                </div>
-                                <div class="modal-footer"></div>
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            </div>
-                        </div><!-- /.modal-content -->
-                    </div><!-- /.modal-dialog -->
-                    {% endfor %}
-                </div><!-- /.modal -->
             </div>
         </div>
     </div>

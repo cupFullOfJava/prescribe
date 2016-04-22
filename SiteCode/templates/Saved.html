@@ -21,10 +21,13 @@
                         <tr>
                             <td>{{saved_artists[x]['name']}}</td>
                             <td><img src="{{saved_artists[x]['picture']}}" height="200" width="200"></td>
-                            <td><button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
-                                        data-target="#bioModal'+i+'">
+                            <td>
+                                <a href="/bio/{{saved_artists[x]['name']}}">
+                                <button type="button">
                                 See Artist Bio
-                            </button></td>
+                                </button>
+                                </a>
+                            </td>
                         </tr>
                         {% endfor %}
                         </tbody>
