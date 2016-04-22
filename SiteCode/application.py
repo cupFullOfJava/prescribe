@@ -32,12 +32,12 @@ def drop_db(exc):
 
 # Render the Home.html template at the base url ("/")
 @application.route('/')
-def home_page():
+def home_page(message=None):
     try:
         print session['user']
     except KeyError:
         print "No user logged in"
-    return render_template('Home.html')
+    return render_template('Home.html', message=message)
 
 
 # Render the about page template at the '/about/' url
@@ -105,7 +105,7 @@ def submit_reg():
     # If some of the fields have empty strings for values, render the template again
     else:
         return render_template('Register.html', flags=flags, values=values)
-    return render_template('Register.html', flags=flags, values=values)
+    return home_page('You have successfully registered!')
 
 
 # This url corresponds with the endpoint for user login requests.
